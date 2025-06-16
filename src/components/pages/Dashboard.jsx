@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export const Dashboard = () => {
   const [progress, setProgress] = useState(41);

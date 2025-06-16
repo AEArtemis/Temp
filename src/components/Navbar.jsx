@@ -49,7 +49,8 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const iconSize = "w-6 h-6";
-  const iconHoverClass = "transition-transform duration-200 group-hover:scale-110";
+  const iconHoverClass =
+    "transition-transform duration-200 group-hover:scale-110";
 
   const linkClasses = (path) =>
     `flex items-center ${collapsed ? "justify-center space-x-0" : "justify-start space-x-2"}
@@ -92,7 +93,9 @@ const Navbar = () => {
         </div>
 
         {!collapsed && (
-          <span className="text-sm font-semibold mb-1 pb-3 pl-1 pt-1 opacity-60 text-left block w-full">Menu</span>
+          <span className="text-sm font-semibold mb-1 pb-3 pl-1 pt-1 opacity-60 text-left block w-full">
+            Menu
+          </span>
         )}
         <NavItem to="/dashboard" icon={LayoutDashboard} label="Dashboard" />
         <NavItem to="/tasks" icon={ClipboardList} label="Tasks" />
@@ -101,7 +104,9 @@ const Navbar = () => {
         <NavItem to="/team" icon={UsersRound} label="Team" />
 
         {!collapsed && (
-          <span className="text-sm font-semibold mb-1 pb-3 pl-1 pt-4 opacity-60 text-left block w-full">General</span>
+          <span className="text-sm font-semibold mb-1 pb-3 pl-1 pt-4 opacity-60 text-left block w-full">
+            General
+          </span>
         )}
         <NavItem to="/settings" icon={Settings} label="Settings" />
       </nav>
@@ -138,7 +143,10 @@ const Navbar = () => {
         </button>
 
         <div className="flex items-center gap-4">
-          <button className="relative p-2 hover:bg-muted rounded-full transition-colors" aria-label="Notifications">
+          <button
+            className="relative p-2 hover:bg-muted rounded-full transition-colors"
+            aria-label="Notifications"
+          >
             <Bell className="w-5 h-5" />
           </button>
           <div className="flex items-center space-x-2">

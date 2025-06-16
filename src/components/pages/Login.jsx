@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const handleLogin = () => {
     navigate("/dashboard");
   };
@@ -21,17 +21,29 @@ export const Login = () => {
 
           <p className="text-sm mb-4">
             Need new account?{" "}
-            <span className="text-pink-700 font-semibold cursor-pointer">Sign Up</span>
+            <span className="text-pink-700 font-semibold cursor-pointer">
+              Sign Up
+            </span>
           </p>
 
           <div className="mb-4">
             <Label htmlFor="email">Email</Label>
-            <Input type="email" id="email" placeholder="Enter your email" className="mt-1" />
+            <Input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              className="mt-1"
+            />
           </div>
 
           <div className="mb-2">
             <Label htmlFor="password">Password</Label>
-            <Input type="password" id="password" placeholder="********" className="mt-1" />
+            <Input
+              type="password"
+              id="password"
+              placeholder="********"
+              className="mt-1"
+            />
           </div>
 
           <div className="flex justify-between items-center mb-4">
@@ -44,7 +56,12 @@ export const Login = () => {
             </a>
           </div>
 
-          <Button className="w-full bg-[#7a6650] hover:bg-[#6a5744] text-white"  onClick={handleLogin}>Sign In</Button>
+          <Button
+            className="w-full bg-[#7a6650] hover:bg-[#6a5744] text-white"
+            onClick={handleLogin}
+          >
+            Sign In
+          </Button>
 
           <div className="flex items-center my-4">
             <div className="flex-grow border-t border-gray-300"></div>
@@ -52,7 +69,10 @@ export const Login = () => {
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
 
-          <Button variant="outline" className="w-full flex items-center justify-center space-x-2">
+          <Button
+            variant="outline"
+            className="w-full flex items-center justify-center space-x-2"
+          >
             <FcGoogle size={20} />
             <span>Sign in with Google</span>
           </Button>

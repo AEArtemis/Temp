@@ -1,6 +1,6 @@
 # To run the web
-npm rum dev
 
+npm rum dev
 
 # React + Vite
 
