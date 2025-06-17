@@ -76,21 +76,18 @@ const Navbar = () => {
   const SidebarContent = (
     <>
       <nav className="space-y-2">
-        <div className="flex h-12 mb-2 relative w-25">
-          <img
-            src={logo}
-            alt="Planora Logo"
-            className={`absolute transition-opacity duration-300 object-contain w-24 ${
-              collapsed ? "opacity-0" : "opacity-100"
-            }`}
-          />
+        <div className="flex items-center h-12 mb-2 relative w-25">
           <img
             src={icon}
             alt="Planora Icon"
-            className={`absolute transition-opacity duration-300 object-contain w-9 ${
-              collapsed ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute transition-opacity duration-300 object-contain w-10`}
           />
+          
+          {!collapsed && (
+            <span className="text-lg font-semibold text-primary-foreground transition-all duration-300 pl-12">
+              Planora
+            </span>
+          )}
         </div>
 
         {!collapsed && (  
