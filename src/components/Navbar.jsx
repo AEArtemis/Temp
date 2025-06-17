@@ -60,16 +60,24 @@ const Navbar = () => {
   }`;
 
   const NavItem = ({ to, icon: Icon, label }) => (
-    <Link to={to} className="relative group">
+    <Link to={to} className="relative">
       <div className={linkClasses(to)}>
-        <Icon className={`${iconSize} ${iconHoverClass}`} />
-        {!collapsed && <span>{label}</span>}
+        <div className="relative group flex items-center justify-center">
+          <Icon className={`${iconSize} ${iconHoverClass}`} />
+          
+          {collapsed && (
+            <span className="absolute left-full ml-6 top-1/2 -translate-y-1/2 
+              bg-primary text-primary-foreground text-xs font-medium rounded 
+              px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity 
+              z-50 whitespace-nowrap shadow-lg pointer-events-none">
+              {label}
+            </span>
+          )}
+        </div>
+
+        {/* Show label only when expanded */}
+        {!collapsed && <span className="truncate">{label}</span>}
       </div>
-      {collapsed && (
-        <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-black text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity z-50 whitespace-nowrap">
-          {label}
-        </span>
-      )}
     </Link>
   );
 
@@ -166,7 +174,7 @@ const Navbar = () => {
       </header>
 
       <div
-        className={`h-screen bg-primary text-primary-foreground p-3 flex flex-col justify-between
+        className={`h-screen bg-primary text-primary-foreground p-2 flex flex-col justify-between
         transition-all duration-300 ease-in-out ${collapsed ? "w-16" : "w-64"}`}
       >
         {SidebarContent}
