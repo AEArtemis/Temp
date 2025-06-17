@@ -1,13 +1,18 @@
-import React from "react";
+import React from "react"
+import { useTheme } from "../Theme"
 
 export const Settings = () => {
+  const { primaryColor, setPrimaryColor } = useTheme()
+
   return (
-    <div className="min-h-screen bg-background pt-20 px-4 sm:px-6 lg:px-8 pb-6 space-y-6">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <h1 className="text-2xl font-semibold text-foreground">Setting</h1>
-        <div className="flex gap-2"></div>
-      </div>
+    <div className="min-h-screen bg-background pt-20 px-4 space-y-6">
+      <h1 className="text-2xl font-semibold text-foreground">Settings</h1>
+        <input
+          type="color"
+          value={primaryColor}
+          onChange={(e) => setPrimaryColor(e.target.value)}
+          className="w-16 h-10 border p-1 rounded"
+        />
     </div>
-  );
-};
+  )
+}

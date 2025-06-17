@@ -53,10 +53,11 @@ const Navbar = () => {
     "transition-transform duration-200 group-hover:scale-110";
 
   const linkClasses = (path) =>
-    `flex items-center ${collapsed ? "justify-center space-x-0" : "justify-start space-x-2"}
-     hover:bg-[#0C0A09] p-2 rounded transition-all ${
-       location.pathname === path ? "bg-[#0C0A09]" : ""
-     }`;
+    `flex items-center group p-2 rounded transition-all duration-300 ease-in-out ${
+      collapsed ? "justify-center space-x-0" : "justify-start space-x-2"
+    } hover:bg-[var(--primary-hover)] ${
+      location.pathname === path ? "bg-[var(--primary-hover)]" : ""
+  }`;
 
   const NavItem = ({ to, icon: Icon, label }) => (
     <Link to={to} className="relative group">
@@ -92,9 +93,16 @@ const Navbar = () => {
           />
         </div>
 
+        {!collapsed && (  
+        <span
+            className={`text-sm font-semibold mb-1 pb-3 pl-1 pt-1 opacity-60 text-left block w-full 
+              transition-all duration-300 ${collapsed ? "opacity-0 max-h-0" : "opacity-100 max-h-12"}
+            `}
+          />
+        )}
         {!collapsed && (
-          <span className="text-sm font-semibold mb-1 pb-3 pl-1 pt-1 opacity-60 text-left block w-full">
-            Menu
+          <span className="text-sm font-semibold mb-1 pb-3 pl-1 opacity-60 text-left block w-full">
+            Main
           </span>
         )}
         <NavItem to="/dashboard" icon={LayoutDashboard} label="Dashboard" />
@@ -113,7 +121,7 @@ const Navbar = () => {
 
       <button
         onClick={handleLogout}
-        className="flex items-center space-x-2 hover:bg-[#0C0A09] p-2 rounded transition-all mt-6 relative group"
+        className="flex items-center space-x-2 hover:bg-[var(--primary-hover)] p-2 rounded transition-all mt-6 relative group"
       >
         <LogOut className={`${iconSize} ${iconHoverClass}`} />
         {!collapsed && <span>Logout</span>}
@@ -129,14 +137,14 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 h-16 bg-background text-foreground flex items-center justify-between px-6 shadow-md z-10
-        transition-all duration-300 ease-in-out border-b rounded-xl ${
+        className={`fixed top-0 h-16 bg-primary text-primary-foreground flex items-center justify-between px-6 shadow-md z-10
+        transition-all duration-300 ease-in-out border-b rounded-b-xl ${
           collapsed ? "left-24 right-11" : "left-72 right-11"
         } dark:shadow-lg dark:border-muted`}
       >
         <button
           onClick={toggleCollapse}
-          className="hover:bg-muted rounded-md transition-colors duration-200 cursor-pointer"
+          className="p-1 hover:bg-[var(--primary-hover)] rounded-md transition-colors duration-200 cursor-pointer"
           aria-label="Toggle sidebar collapse"
         >
           <Menu className={`${iconSize} ${iconHoverClass}`} />
@@ -144,7 +152,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <button
-            className="relative p-2 hover:bg-muted rounded-full transition-colors"
+            className="relative p-2 hover:bg-[var(--primary-hover)] rounded-full transition-colors"
             aria-label="Notifications"
           >
             <Bell className="w-5 h-5" />
@@ -161,7 +169,7 @@ const Navbar = () => {
       </header>
 
       <div
-        className={`h-screen bg-[#1C1917] text-white p-3 flex flex-col justify-between
+        className={`h-screen bg-primary text-primary-foreground p-3 flex flex-col justify-between
         transition-all duration-300 ease-in-out ${collapsed ? "w-16" : "w-64"}`}
       >
         {SidebarContent}

@@ -8,24 +8,23 @@ import { Analytics } from "./components/pages/Analytics";
 import { Team } from "./components/pages/Team";
 import Layout from "./components/Layout";
 import { Calendar } from "./components/pages/Calendar";
-
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
 
-        {/* Protected routes with Sidebar */}
-        <Route element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/tasks" element={<Tasks />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/settings" element={<Settings />} />
-        </Route>
-      </Routes>
-    </Router>
+          {/* Protected routes with Sidebar */}
+          <Route element={<Layout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/settings" element={<Settings />} />
+          </Route>
+        </Routes>
+      </Router>
   );
 }
 
