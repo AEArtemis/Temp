@@ -11,7 +11,7 @@ function useTheme() {
 }
 
 function ThemeProvider({ children }) {
-  const [primaryColor, setPrimaryColorState] = useState("#4f46e5");
+  const [primaryColor, setPrimaryColorState] = useState("#2a5751");
 
   useEffect(() => {
     const saved = localStorage.getItem("primaryColor");
