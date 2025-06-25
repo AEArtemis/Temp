@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card } from "../ui/card";
 
 export const Dashboard = () => {
 
@@ -7,7 +8,9 @@ export const Dashboard = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h1 className="text-2xl font-semibold text-foreground">Dashboard</h1>
+        <div className="flex gap-2"></div>
       </div>
+      <Card></Card>
     </div>
   );
 };
