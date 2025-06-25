@@ -16,8 +16,8 @@ export const Login = () => {
       <div className="bg-white flex flex-col md:flex-row rounded-2xl shadow-lg overflow-hidden max-w-4xl w-full h-[500px]">
         {/* Left Side -> Form */}
         <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-[#7a6650]">Welcome</h2>
-          <p className="italic text-lg text-[#7a6650] mb-4">to Planora</p>
+          <h2 className="text-3xl font-bold text-primary">Welcome</h2>
+          <p className="italic text-lg text-primary mb-4">to Planora</p>
 
           <p className="text-sm mb-4">
             Need new account?{" "}
@@ -57,7 +57,7 @@ export const Login = () => {
           </div>
 
           <Button
-            className="w-full bg-[#7a6650] hover:bg-[#6a5744] text-white"
+            className="w-full bg-primary text-primary-foreground text-white"
             onClick={handleLogin}
           >
             Sign In
