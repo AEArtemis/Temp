@@ -10,10 +10,13 @@ import {
   Calendar,
   ChartColumnBig,
   UsersRound,
+  ArrowBigLeftDash,
+  ArrowBigRightDash,
 } from "lucide-react";
 import logo from "./../assets/images/PlanoraLogo.png";
 import icon from "./../assets/images/PlanoraIcon.png";
 import avatar from "./../assets/images/Avatar.jpg";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const location = useLocation();
@@ -74,8 +77,6 @@ const Navbar = () => {
             </span>
           )}
         </div>
-
-        {/* Show label only when expanded */}
         {!collapsed && <span className="truncate">{label}</span>}
       </div>
     </Link>
@@ -144,7 +145,7 @@ const Navbar = () => {
       <header
         className={`fixed top-0 h-16 bg-primary text-primary-foreground flex items-center justify-between px-6 shadow-md z-10
         transition-all duration-300 ease-in-out border-b rounded-b-xl ${
-          collapsed ? "left-24 right-11" : "left-72 right-11"
+          collapsed ? "left-24 right-8" : "left-72 right-8"
         } dark:shadow-lg dark:border-muted`}
       >
         <button
@@ -152,16 +153,22 @@ const Navbar = () => {
           className="p-1 hover:bg-[var(--primary-hover)] rounded-md transition-colors duration-200 cursor-pointer"
           aria-label="Toggle sidebar collapse"
         >
-          <Menu className={`${iconSize} ${iconHoverClass}`} />
+          {collapsed && (
+            <ArrowBigRightDash className={`w-6 h-6 ${iconHoverClass}`} />
+          )}
+
+           {!collapsed && (
+            <ArrowBigLeftDash className={`w-6 h-6 ${iconHoverClass}`} />
+          )}
         </button>
 
         <div className="flex items-center gap-4">
-          <button
+          <Button
             className="relative p-2 hover:bg-[var(--primary-hover)] rounded-full transition-colors"
             aria-label="Notifications"
           >
             <Bell className="w-5 h-5" />
-          </button>
+          </Button>
           <div className="flex items-center space-x-2">
             <img
               src={avatar}
